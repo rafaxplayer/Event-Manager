@@ -1,0 +1,31 @@
+.card{
+    border-left:3px solid #960a2d !important;
+}
+.card-title{
+    font-size:20px !important;
+    font-weight:400 !important;
+    text-transform: capitalize;
+}
+.card-content{
+    padding: 0 24px 24px !important;
+    
+}
+.loader{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transition: translateX(-50%)
+}
+.loader spam{
+    display: block;
+    margin-top: 5px;
+}
+.right-info{
+     text-align: right;
+     padding: 15px 15px 0 0;
+}
+.right-info spam{
+    display: block;
+    font-size: 10px;
+    margin-bottom: 6px;
+}
