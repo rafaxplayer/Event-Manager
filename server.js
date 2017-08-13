@@ -6,10 +6,12 @@ const path = require('path');
 const mongoose = require('mongoose')
 const app = express();
 const api = require('./app/routes')
+const cors = require('cors')
 const constants = require('./app/constants')
 mongoose.Promise = global.Promise;
 
 // Serve static assets
+app.use(cors());//use cors for all origins
 app.use(express.static(path.resolve(__dirname, 'dist')));
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());

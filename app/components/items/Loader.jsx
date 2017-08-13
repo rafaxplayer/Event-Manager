@@ -9,7 +9,7 @@ class Loader extends Component {
         }
     }
 
-    componentDidMount() {
+    componentDidMount(){
         setTimeout(() => {
             this.setState({waitfinish:true})
         },3000)

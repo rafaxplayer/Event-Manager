@@ -92,5 +92,5 @@ class New extends Component {
         );
     }
 }
-const mapStateToProps = tstate => ({response:state.events.newresp,start:state.modals.eventstart})
+const mapStateToProps = state => ({response:state.events.newresp,start:state.modals.eventstart})
 export default connect(mapStateToProps,{saveEvent, getAllEvents, showModal})(New);

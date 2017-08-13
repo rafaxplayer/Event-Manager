@@ -23,11 +23,11 @@ class App extends Component {
             
         }
         this._notificationSystem = null
-        this.addNotification= this.addNotification.bind(this)
-        this.showModal=this.showModal.bind(this)
+        this.addNotification = this.addNotification.bind(this)
+        
     }
 
-    addNotification(title,message) {
+    addNotification(title,message){
         
         this._notificationSystem.addNotification({
             title:title,
@@ -47,8 +47,9 @@ class App extends Component {
     handleToggleCalendarList(){
         this.setState({renderList:!this.state.renderList})
     }
+    
 
-    componentWillMount() {
+    componentWillMount(){
         this.props.getEventsToday()
         this.props.getAllEvents()
         
@@ -56,8 +57,9 @@ class App extends Component {
 
     showModal(type, bool){
         this.props.showModal(type,bool)
-               
     }
+               
+    
     componentDidMount(){
 
         this._notificationSystem = this.refs.notificationSystem;
@@ -76,12 +78,12 @@ class App extends Component {
                 
             <Header shownew = {this.state.renderList} handleNew = {this.handleToggleCalendarList.bind(this)}/>
             {
-                this.state.renderList ? <List /> : <Calendar/>
+                this.state.renderList ? <List/> : <Calendar/>
             }
             
             <NotificationSystem ref="notificationSystem"/>
 
-            <Modal show={ this.props.NewIsOpen } onClose={ this.showModal.bind(this, MODALNEW,false) } containerClassName="dialog">
+            <Modal show={ this.props.NewIsOpen } onClose={ this.showModal.bind(this,MODALNEW,false) } containerClassName="dialog">
                 <New/>
             </Modal>
             <Modal show={ this.props.DetailIsOpen } onClose={ this.showModal.bind(this, MODALDETAIL, false) } containerClassName="dialog">
@@ -94,10 +96,11 @@ class App extends Component {
         );
     }
 }
-const mapStateToProps = state =>({
+const mapStateToProps=state=>({
     eventstoday:state.events.list_today,
     EditIsOpen:state.modals.modalEditIsOpen,
     DetailIsOpen:state.modals.modalDetailIsOpen,
     NewIsOpen:state.modals.modalNewIsOpen
 })
+
 export default connect(mapStateToProps,{showModal, getEventsToday, getAllEvents})(App);

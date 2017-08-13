@@ -4,6 +4,7 @@ const  moment = require('moment')
 import { connect } from 'react-redux'
 import { deleteEvent , showModal, getAllEvents} from '../../actions'
 import { MODALEDIT,MODALDETAIL } from '../../constants'
+
 class DetailEvent extends Component {
     constructor(props){
         super(props)
@@ -18,13 +19,11 @@ class DetailEvent extends Component {
         };
     }
 
-    close(){
-        this.props.close()
-    }
+    close(){this.props.close()}
     
-    edit(){
-        this.props.showModal(MODALEDIT,true)
-    }
+    
+    edit(){this.props.showModal(MODALEDIT,true)}
+    
 
     delete(){
         const res = confirm('¿Seguro quieres eliminar este evento?')

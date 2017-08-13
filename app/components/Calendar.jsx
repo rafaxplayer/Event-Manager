@@ -25,7 +25,6 @@ class Calendar extends Component {
 			eventClick: function(calEvent, jsEvent, view) {
                 self.props.getEvent(calEvent._id)
                 self.props.showModal(MODALDETAIL,true)
-                
             },
             dayClick: function(date, jsEvent, view, resourceObj) {
                 self.props.setNewEventStart(moment(date).toISOString())
@@ -35,7 +34,7 @@ class Calendar extends Component {
         
    }
 
-    componentDidMount() {
+    componentDidMount(){
        
         this.initCalendar()
           

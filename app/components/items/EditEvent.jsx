@@ -30,16 +30,12 @@ class EditEvent extends Component {
         this.handleChange = this.handleChange.bind(this)
     }
 
-    componentWillMount() {
-   
-        this.setState({event:this.props.event})
+    componentWillMount(){ this.setState({event:this.props.event})}
            
-    }
     
-    validateData(name, comment){
-
-        return comment.length > 0 && name.length > 0 
-    }
+    
+    validateData(name, comment){comment.length > 0 && name.length > 0 }
+    
 
     handleUpdate(e){
         e.preventDefault()

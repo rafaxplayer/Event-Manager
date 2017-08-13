@@ -1,11 +1,11 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { render } from 'react-dom'
 import './styles/normalize.css'
 import App from './components/App'
 import { store }from './store'
 import { Provider } from 'react-redux'
 
-ReactDOM.render(
+render(
     <Provider store={store}>
         <App/>
     </Provider>

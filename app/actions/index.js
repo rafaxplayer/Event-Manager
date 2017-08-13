@@ -93,6 +93,7 @@ export function showModal(idModal,boolShow){
 }
 
 export function setNewEventStart(eventstart){
- 
-    store.dispatch({type:constants.NEW_EVENT_START,payload:eventstart})
+    return (dispatch, getstate) =>{
+        dispatch({type:constants.NEW_EVENT_START,payload:eventstart})
+    }
 }

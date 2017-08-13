@@ -1,5 +1,11 @@
 .card{
     border-left:3px solid #960a2d !important;
+    cursor: pointer;
+    transition: all 0.4s
+}
+.card:hover{
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.5), 0 1px 5px 0 rgba(0,0,0,0.6), 0 3px 1px -2px rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.1)
 }
 .card-title{
     font-size:20px !important;
